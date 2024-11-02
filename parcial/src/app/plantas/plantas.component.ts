@@ -5,7 +5,7 @@ import { PlantaService } from './planta.service';
 @Component({
   selector: 'app-plantas',
   templateUrl: './plantas.component.html',
-  styleUrls: ['./plantas.component.css']
+  styleUrls: ['./plantas.component.css'],
 })
 export class PlantasComponent implements OnInit {
 
@@ -18,6 +18,7 @@ export class PlantasComponent implements OnInit {
     })
   }
   ngOnInit() {
+    this.getPlantas();
   }
 
 }
