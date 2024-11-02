@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Planta } from './planta';
+import { PlantaService } from './planta.service';
 
 @Component({
   selector: 'app-plantas',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlantasComponent implements OnInit {
 
-  constructor() { }
+  plantas: Array<Planta>=[]
+  constructor(private plantaService: PlantaService) { }
 
   ngOnInit() {
   }
