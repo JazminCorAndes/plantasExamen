@@ -12,6 +12,11 @@ export class PlantasComponent implements OnInit {
   plantas: Array<Planta>=[]
   constructor(private plantaService: PlantaService) { }
 
+  getPlantas(){
+    this.plantaService.gePlantas().subscribe(plantas => {
+      this.plantas=plantas
+    })
+  }
   ngOnInit() {
   }
 
