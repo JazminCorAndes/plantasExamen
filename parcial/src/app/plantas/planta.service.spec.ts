@@ -1,22 +1,19 @@
-/* tslint:disable:no-unused-variable */
-
 import { TestBed,inject } from '@angular/core/testing';
 import { PlantaService } from './planta.service';
 import { HttpClientTestingModule } from "@angular/common/http/testing";
-import { AppComponent } from '../app.component';
-import { PlantasComponent } from './plantas.component';
-import { HttpClientModule } from '@angular/common/http';
+
 
 describe('Service: Planta', () => {
+  let service: PlantaService;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule,HttpClientModule],
+      imports:[HttpClientTestingModule,],
       providers: [PlantaService],
-      declarations: [AppComponent,PlantasComponent]
     });
+    service = TestBed.inject(PlantaService);
   });
 
-  it('should ...', inject([PlantaService], (service: PlantaService) => {
+  it('should be created', () => {
     expect(service).toBeTruthy();
-  }));
+  });
 });

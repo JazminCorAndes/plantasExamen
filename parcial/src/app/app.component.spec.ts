@@ -1,17 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { PlantasComponent } from './plantas/plantas.component';
-import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule, HttpClientModule
+         AppComponent,PlantasComponent
       ],
       declarations: [
-        AppComponent, PlantasComponent
+        
       ],
     }).compileComponents();
   });
@@ -22,10 +20,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'plantasweb'`, () => {
+  it(`should have as title 'parcial'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('plantasweb');
+    expect(app.title).toEqual('parcial');
   });
 
 });
