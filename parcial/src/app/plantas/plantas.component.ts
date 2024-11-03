@@ -13,13 +13,24 @@ import { CommonModule } from '@angular/common';
 export class PlantasComponent implements OnInit {
 
   plantas: Array<Planta>=[]
+  totalPInterior: number=0;
+  totalPExterior: number=0;
   constructor(private plantaService: PlantaService) { }
 
-  ngOnInit() {
+  getPlantas(){
     this.plantaService.gePlantas().subscribe(plantas => {
       this.plantas=plantas
-      console.log(this.plantas)
+      this.getTotals();
     })
+  }
+  getTotals(){
+    this.totalPInterior = this.plantas.filter(planta => planta.tipo === 'Interior').length;
+    this.totalPExterior = this.plantas.filter(planta => planta.tipo === 'Exterior').length;
+  }
+
+  ngOnInit() {
+    this.getPlantas();
+    
   }
 
 }

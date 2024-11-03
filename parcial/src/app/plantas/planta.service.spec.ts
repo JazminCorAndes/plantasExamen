@@ -1,12 +1,18 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
+import { TestBed,inject } from '@angular/core/testing';
 import { PlantaService } from './planta.service';
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { AppComponent } from '../app.component';
+import { PlantasComponent } from './plantas.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('Service: Planta', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PlantaService]
+      imports:[HttpClientTestingModule,HttpClientModule],
+      providers: [PlantaService],
+      declarations: [AppComponent,PlantasComponent]
     });
   });
 
